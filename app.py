@@ -1,5 +1,3 @@
-pip install matplotlib pandas numpy plotly requests
-
 import streamlit as st
 import pandas as pd
 import numpy as np
