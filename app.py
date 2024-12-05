@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -11,7 +10,17 @@ import datetime as dt
 import seaborn as sns
 from babel.numbers import format_currency
 
-all_df = pd.read_csv('all_df.csv')
+drive_link = "https://drive.google.com/file/d/12MLfNHv_Y--RMvbCGMYcqzgr6VWxgXA1/view?usp=sharing"
+file_id = drive_link.split('/d/')[1].split('/')[0]
+download_url = f"https://drive.google.com/uc?id={file_id}"
+
+response = requests.get(download_url)
+csv_path = "all_df.csv"
+with open(csv_path, "wb") as file:
+    file.write(response.content)
+
+all_df = pd.read_csv(csv_path)
+
 olist_logo_path = 'olist_logo.png'
 
 st.title("Brazillian e-Commerce Analysis :shopping_trolley:")
