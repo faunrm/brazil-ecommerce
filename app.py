@@ -222,7 +222,7 @@ with col2:
     hover_name='customer_state',
     title='Customer Distribution by State',
     color_continuous_scale="Viridis",
-    range_color=(0, customer_state_df['customer_unique_id'].max())
+    range_color=(0, cust_df['customer_unique_id'].max())
     )
 
   fig2.update_geos(
