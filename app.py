@@ -171,8 +171,8 @@ st.header('Customers and Sellers Distribution')
 geojson_url = "https://raw.githubusercontent.com/codeforamerica/click_that_hood/master/public/data/brazil-states.geojson"
 geojson_data = requests.get(geojson_url).json()
 
-cust_df = pd.read_csv('data\cust_state_df.csv')
-sellers_df = pd.read_csv('data\seller_state_df.csv')
+cust_df = pd.read_csv('cust_state_df.csv')
+sellers_df = pd.read_csv('seller_state_df.csv')
 
 customer_state_df = cust_df.groupby(by='customer_state').agg({'customer_unique_id': 'count'}).sort_values(by='customer_unique_id', ascending=False).reset_index()
 customer_state_df['state_iso'] = 'BR-' + customer_state_df['customer_state']
