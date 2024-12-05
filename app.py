@@ -1,4 +1,4 @@
-%pip install matplotlib pandas numpy plotly requests
+pip install matplotlib pandas numpy plotly requests
 
 import streamlit as st
 import pandas as pd
