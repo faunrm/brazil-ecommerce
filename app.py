@@ -211,7 +211,7 @@ with col1:
   st.plotly_chart(fig)
 
 with col2:
-  cust_total = cust_df.customer_unique_id.nunique()
+  cust_total = cust_df.customer_unique_id.sum()
   st.metric("Total Customers", value=cust_total)
   fig2 = px.choropleth(
     customer_state_df,
